@@ -3,13 +3,17 @@ from django import forms
 from .models import Order
 from .models import ClothingItem
 
-class ClothingFilterForm(forms.Form):
-    category = forms.ChoiceField(choices=ClothingItem.CATEGORY_CHOICES, required=False, label="Category")
-    fastening_type = forms.ChoiceField(choices=ClothingItem.FASTENING_CHOICES, required=False, label="Fastening Type")
-    physical_condition = forms.ChoiceField(choices=ClothingItem.PHYSICAL_CONDITION_CHOICES, required=False, label="Special Needs")
-    size = forms.CharField(max_length=10, required=False, label="Size")
-    material = forms.CharField(max_length=100, required=False, label="Material")
-
+class ClothingFilterForm(forms.ModelForm):
+    class Meta:
+        model = ClothingItem
+        fields = ['category', 'fastening_type', 'physical_condition', 'size', 'material']
+        widgets = {
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'fastening_type': forms.Select(attrs={'class': 'form-control'}),
+            'physical_condition': forms.Select(attrs={'class': 'form-control'}),
+            'size': forms.Select(attrs={'class': 'form-control'}),
+            'material': forms.Select(attrs={'class': 'form-control'}),
+        }
 class OrderForm(forms.ModelForm):
     phone = forms.CharField(max_length=15, help_text="Enter your phone number for SMS updates.")
     

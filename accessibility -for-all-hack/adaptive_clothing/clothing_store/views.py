@@ -52,25 +52,33 @@ def place_order(request, item_id):
 def homepage(request):
     return render(request, 'clothing_store/homepage.html')
 
+def mission(request):
+    return render(request, 'clothing_store/mission.html')
+
 # View to browse clothing with filters
 def browse_clothing(request):
-    form = ClothingFilterForm(request.GET)
-    clothing_items = ClothingItem.objects.all()
+    clothing_items = ClothingItem.objects.all()  # Initial queryset of all items
+    form = ClothingFilterForm(request.GET or None)  # Get the form and populate it with GET params
 
+    # Apply filters if the form is valid
     if form.is_valid():
-        if form.cleaned_data['category']:
+        if form.cleaned_data.get('category'):
             clothing_items = clothing_items.filter(category=form.cleaned_data['category'])
-        if form.cleaned_data['fastening_type']:
+        if form.cleaned_data.get('fastening_type'):
             clothing_items = clothing_items.filter(fastening_type=form.cleaned_data['fastening_type'])
-        if form.cleaned_data['physical_condition']:
+        if form.cleaned_data.get('physical_condition'):
             clothing_items = clothing_items.filter(physical_condition=form.cleaned_data['physical_condition'])
-        if form.cleaned_data['size']:
+        if form.cleaned_data.get('size'):
             clothing_items = clothing_items.filter(size=form.cleaned_data['size'])
-        if form.cleaned_data['material']:
-            clothing_items = clothing_items.filter(material__icontains=form.cleaned_data['material'])
+        if form.cleaned_data.get('material'):
+            clothing_items = clothing_items.filter(material=form.cleaned_data['material'])
 
-    return render(request, 'clothing_store/browse_clothing.html', {'form': form, 'clothing_items': clothing_items})
-
+    # Pass both the form and filtered items to the template
+    context = {
+        'clothing_items': clothing_items,
+        'form': form,
+    }
+    return render(request, 'clothing_store/browse_clothing.html', context)
 # View to show SMS updates page
 def sms_updates(request):
     return render(request, 'clothing_store/sms_updates.html')

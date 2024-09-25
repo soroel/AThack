@@ -29,6 +29,7 @@ urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('browse/', views.browse_clothing, name='browse_clothing'),
     path('sms-updates/', views.sms_updates, name='sms_updates'),
+    path('mission/', views.mission, name='mission'),
     path('order-successful/<int:item_id>/', views.order_confirmation, name='order_confirmation'),
     #path('order-delivery/', views.order_delivery, name='order_delivery'),
 ]

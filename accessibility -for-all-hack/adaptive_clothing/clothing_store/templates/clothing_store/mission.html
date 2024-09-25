@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission - Adaptive Clothing for All</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Our Mission</h1>
+        <p class="lead text-center">At Adaptive Clothing Kenya, our mission is to make dressing simple and comfortable for people of all abilities. We believe that everyone, regardless of their physical abilities, deserves access to clothing that is easy to wear, functional, and stylish.</p>
+
+        <h2 class="text-center my-4">Why We Do It</h2>
+        <p>We understand the challenges faced by people with disabilities when it comes to clothing. Our goal is to provide adaptive clothing solutions that help people live more independently and comfortably, whether they are children, adults, or caregivers.</p>
+        
+        <h3 class="my-4">Our Core Values</h3>
+        <ul>
+            <li><strong>Inclusivity:</strong> We create designs that cater to people of all abilities.</li>
+            <li><strong>Functionality:</strong> Our clothing solutions focus on ease of use, especially for those with limited mobility.</li>
+            <li><strong>Comfort:</strong> We ensure that all our garments are comfortable and made from quality materials.</li>
+        </ul>
+
+        <h3 class="my-4">Join Our Mission</h3>
+        <p>We are always looking to collaborate with like-minded individuals and organizations to make adaptive clothing more accessible. Together, we can make a positive impact on the lives of people with disabilities.</p>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'browse_clothing' %}" class="btn btn-primary">Browse Clothing</a>
+            
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light p-4 text-center mt-5">
+        <p>&copy; 2024 Adaptive Clothing Kenya. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

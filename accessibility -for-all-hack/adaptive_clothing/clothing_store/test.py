@@ -13,4 +13,4 @@ def send_test_sms(phone_number, message):
         print(f"Error while sending SMS: {e}")
 
 # Test the SMS function
-send_test_sms("+254794824427", "Test message from sorophine, just testing my app. be blessed!")
+send_test_sms("+254795553206", "Test message from sorophine, just testing my app. be blessed!")
