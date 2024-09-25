@@ -1,0 +1,68 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+h1 {
+    color: #343a40;
+}
+.hero-section {
+    background: linear-gradient(90deg, rgba(29,151,108,1) 0%, rgba(147,249,185,1) 100%);
+    color: white;
+    padding: 100px 0;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #333;
+}
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+#key-features .col-md-4, #how-it-works .col-md-3 {
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/* clothing_store/static/css/styles.css */
+
+form {
+    margin-bottom: 30px;
+}
+
+.card {
+    border: 1px solid #ddd;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.small-icon {
+    width: 50px;  /* Adjust the width to your preference */
+    height: auto; /* Keep the aspect ratio */
+}
+

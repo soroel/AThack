@@ -1,0 +1,56 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="color: #007bff; font-weight: bold;">Browse Clothing</h2>
+
+    <!-- Filter Form -->
+    <form method="get" class="row g-3 mb-5" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+        <div class="col-md-3">
+            <label for="category" class="form-label">Category</label>
+            {{ form.category|as_crispy_field }}
+        </div>
+        <div class="col-md-3">
+            <label for="fastening_type" class="form-label">Fastening Type</label>
+            {{ form.fastening_type|as_crispy_field }}
+        </div>
+        <div class="col-md-3">
+            <label for="physical_condition" class="form-label">Special Needs</label>
+            {{ form.physical_condition|as_crispy_field }}
+        </div>
+        <div class="col-md-3">
+            <label for="size" class="form-label">Size</label>
+            {{ form.size|as_crispy_field }}
+        </div>
+        <div class="col-md-3">
+            <label for="material" class="form-label">Material</label>
+            {{ form.material|as_crispy_field }}
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Filter</button>
+        </div>
+    </form>
+
+    <!-- Horizontal Scrollable Clothing Items -->
+    <div class="d-flex overflow-auto py-3" style="gap: 20px;">
+        {% for item in clothing_items %}
+            <div class="card mb-4 shadow-sm" style="min-width: 300px; border-radius: 15px; overflow: hidden;">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}" style="height: 300px; object-fit: cover;">
+                {% else %}
+                    <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="Default Image" style="height: 300px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description|truncatechars:100 }}</p>
+                    <p><strong>Price:</strong> {{ item.price }}</p>
+                    <a href="{% url 'place_order' item.id %}" class="btn btn-success btn-block">Order Now</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No clothing items match your filters.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

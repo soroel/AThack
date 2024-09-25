@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Clothing for All</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section text-center p-5 bg-gradient text-light">
+        <h1>Making Dressing Simple for people of all abilities, Every Day</h1>
+        <p class="lead">Discover comfortable, easy-to-wear clothing designed for children with disabilities.</p>
+        <a href="#" class="btn btn-primary btn-lg m-2">Shop Adaptive Clothing</a>
+        <a href="#" class="btn btn-outline-light btn-lg m-2">Learn More About Our Mission</a>
+    </div>
+
+    <section id="how-it-works" class="container my-5">
+        <h2 class="text-center">How It Works</h2>
+        <div class="row text-center mt-4">
+            <!-- Step 1: Browse Clothing -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 clickable-card" onclick="location.href='{% url 'browse_clothing' %}'" style="cursor: pointer;">
+                    <img src="{% static 'images/search.png' %}" class="card-img-top mb-3 small-icon" alt="Browse Clothing Icon">
+                    <h4>Step 1</h4>
+                    <p>Filter and browse adaptive clothing based on your child’s specific needs. Tailor-made options are available for various physical conditions.</p>
+                </div>
+            </div>
+    
+            <!-- Step 2: Place an Order -->
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 clickable-card" onclick="location.href='{% url 'place_order' item_id=1 %}'" style="cursor: pointer;">
+                    <img src="{% static 'images/checkout.png' %}" class="card-img-top mb-3 small-icon" alt="Place an Order Icon">
+                    <h4>Step 2</h4>
+                    <p>Place an order with our simple forms, including special size or fitting instructions.</p>
+                </div>
+            </div>
+            
+
+            <!-- Step 3: Receive SMS Updates -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 clickable-card" onclick="location.href='{% url 'sms_updates' %}'" style="cursor: pointer;">
+                    <img src="{% static 'images/sms.png' %}" class="card-img-top mb-3 small-icon" alt="Receive SMS Updates Icon">
+                    <h4>Step 3</h4>
+                    <p>Receive SMS notifications to stay updated on your order status and delivery.</p>
+                </div>
+            </div>
+    
+            <!-- Step 4: Order Delivered -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 clickable-card" onclick="location.href='{% url 'order_confirmation' 1   %}'" style="cursor: pointer;">
+                    <img src="{% static 'images/received.png' %}" class="card-img-top mb-3 small-icon" alt="Order Delivered Icon">
+                    <h4>Step 4</h4>
+                    <p>Your order is delivered to your doorstep, ready to wear with comfort and style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="key-features" class="container my-5">
+        <h2 class="text-center">Key Features</h2>
+        <div class="row text-center mt-4">
+            <!-- Easy Fastening Options -->
+            <div class="col-md-4 mb-4">
+                <img src="{% static 'images/easy_fastening_icon.svg' %}" alt="Easy Fastening" class="feature-icon mb-3">
+                <h4>Easy Fastening Options</h4>
+                <p>Magnetic zippers, Velcro, and other easy-fastening solutions designed for children.</p>
+            </div>
+    
+            <!-- Custom Fit -->
+            <div class="col-md-4 mb-4">
+                <img src="{% static 'images/custom_fit_icon.svg' %}" alt="Custom Fit" class="feature-icon mb-3">
+                <h4>Custom Fit</h4>
+                <p>Tailor-made clothing options that cater to various physical conditions, ensuring comfort.</p>
+            </div>
+    
+            <!-- Inclusive Designs -->
+            <div class="col-md-4 mb-4">
+                <img src="{% static 'images/inclusive_design_icon.svg' %}" alt="Inclusive Designs" class="feature-icon mb-3">
+                <h4>Inclusive Designs</h4>
+                <p>Aesthetically appealing designs suitable for children of all abilities, combining function with fashion.</p>
+            </div>
+    
+            <!-- Order & Delivery -->
+            <div class="col-md-4 mb-4">
+                <img src="{% static 'images/order_delivery_icon.svg' %}" alt="Order & Delivery" class="feature-icon mb-3">
+                <h4>Order & Delivery</h4>
+                <p>Quick and easy online ordering with SMS notifications to keep you updated.</p>
+            </div>
+    
+            <!-- Accessible Customer Support -->
+            <div class="col-md-4 mb-4">
+                <img src="{% static 'images/customer_support_icon.svg' %}" alt="Customer Support" class="feature-icon mb-3">
+                <h4>Accessible Customer Support</h4>
+                <p>24/7 support for caregivers via phone, chat, or SMS to assist with any queries.</p>
+            </div>
+
+            <div class="col-md-4">
+                <img src="{% static 'images/sms_alerts.svg' %}" alt="Order Alerts" class="mb-3">
+                <h3>Order Alerts</h3>
+                <p>Receive SMS updates for new arrivals and special offers.</p>
+            </div>
+        </div>
+    </section>
+        
+    
+    <!-- Categories Section -->
+    <div class="container my-5">
+        <h2 class="text-center">Explore Our Collections</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/children_wear.jpg' %}" class="card-img-top" alt="Children's Adaptive Wear">
+                    <div class="card-body">
+                        <h5 class="card-title">Children's Adaptive Wear</h5>
+                        <p class="card-text">Shirts, pants, shoes, and more.</p>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/special_occasions.jpg' %}" class="card-img-top" alt="Special Occasion Outfits">
+                    <div class="card-body">
+                        <h5 class="card-title">Special Occasion Outfits</h5>
+                        <p class="card-text">Formal wear for special events.</p>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/accessories.jpg' %}" class="card-img-top" alt="Accessories">
+                    <div class="card-body">
+                        <h5 class="card-title">Accessories</h5>
+                        <p class="card-text">Adaptive shoes, hats, and more.</p>
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <section id="featured-products" class="container mt-5">
+        <h2 class="text-center">Featured Adaptive Clothing</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/velcero.jpeg' %}" class="card-img-top" alt="Children Wear">
+                    <div class="card-body">
+                        <h5 class="card-title">Velcro Pants</h5>
+                        <p class="card-text">Easy-to-use Velcro pants designed for kids with mobility challenges.</p>
+                        <p class="price">$25.00</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/magnetic-zipper.jpeg' %}" class="card-img-top" alt="Easy Fastening">
+                    <div class="card-body">
+                        <h5 class="card-title">Magnetic Zipper Jacket</h5>
+                        <p class="card-text">A jacket with easy-to-use magnetic zippers, perfect for kids with dexterity issues.</p>
+                        <p class="price">$35.00</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'images/shoes.jpeg' %}" class="card-img-top" alt="Custom Fit">
+                    <div class="card-body">
+                        <h5 class="card-title">Custom Fit Shoes</h5>
+                        <p class="card-text">Shoes designed to perfectly fit every child’s unique needs.</p>
+                        <p class="price">$40.00</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="collaborations" class="container my-5">
+    <h2 class="text-center">Our Collaborators</h2>
+    <p class="text-center">We are proud to work with leading organizations, designers, and caregivers who are dedicated to making clothing more accessible for children with disabilities.</p>
+    
+    <div class="row text-center mt-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="{% static 'images/organization_logo.png' %}" class="card-img-top" alt="Organization Name">
+                <div class="card-body">
+                    <h5 class="card-title">Organization A</h5>
+                    <p class="card-text">Partnered with us to provide funding and distribution support for our adaptive clothing collection.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="{% static 'images/designer_photo.jpg' %}" class="card-img-top" alt="Designer Name">
+                <div class="card-body">
+                    <h5 class="card-title">Designer B</h5>
+                    <p class="card-text">Created functional and stylish designs, focusing on easy fastening and custom fits for children with mobility issues.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="{% static 'images/caregiver_photo.jpg' %}" class="card-img-top" alt="Caregiver Name">
+                <div class="card-body">
+                    <h5 class="card-title">Caregiver C</h5>
+                    <p class="card-text">Provided real-world feedback on how our adaptive clothing has made dressing easier for children with disabilities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center mt-4">
+        <a href="#" class="btn btn-primary">Partner with Us</a>
+    </div>
+</section>
+
+    
+<section id="newsletter" class="text-center bg-light py-5">
+    <div class="container">
+        <h2>Stay Updated!</h2>
+        <p>Sign up for our newsletter to receive the latest updates on adaptive clothing and exclusive offers.</p>
+        <form class="form-inline justify-content-center">
+            <div class="form-group mb-2">
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light p-4 text-center">
+        <p>&copy; 2024 Adaptive Clothing Kenya. All rights reserved.</p>
+        <p><a href="#" class="text-light">Contact Us</a> | <a href="#" class="text-light">FAQ</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
