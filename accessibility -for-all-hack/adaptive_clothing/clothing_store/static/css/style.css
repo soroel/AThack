@@ -66,3 +66,57 @@ form {
     height: auto; /* Keep the aspect ratio */
 }
 
+/* additional css */
+
+.hero-section {
+    background: linear-gradient(to right, #0062E6, #33AEFF); /* Blue gradient */
+    color: #fff; /* Text color */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+#button {
+    background-color: #FFC107; /* Yellow */
+    color: #000; /* Dark text */
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-outline-light {
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border-color: #FFF; /* White outline */
+}
+/* dark mode */
+.dark-mode .navbar {
+    background-color: #333;
+}
+
+.dark-mode .footer {
+    background-color: #222;
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.dark-mode .btn-primary {
+    background-color: #555;
+    border-color: #444;
+}
