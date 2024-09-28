@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hy28amln$_ywyy3++a5&xcd3i&saab90+2(52zf&7@(t+^qnkk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.191', 'localhost', '127.0.0.1']
 
 # Initialize Africa's Talking
 #AFRICAS_TALKING_USERNAME = "soroel1" 
